@@ -28,5 +28,25 @@ function operate(a,b,op){
    return "Invalid Number";
  }
 }
+const buttons=["7","8","9","*","4","5","6","-","1","2","3","+","+/-","0","/","="];
+const container=document.querySelector(".container");
+const display = document.querySelector(".display");
+display.value = "123"; // مقدار را نشان می‌دهد
 
-console.log(operate(3,4,"+"));
+
+let row;//each container's row
+buttons.forEach((item,index)=>{
+  if(index%4 ==0){
+   row=document.createElement("div");
+   row.classList.add("row");
+   container.appendChild(row);
+  }
+  const btn=document.createElement("button");
+  btn.textContent=item;
+  btn.classList.add("button");
+  row.appendChild(btn);
+
+})
+
+
+
